@@ -58,17 +58,17 @@ io.sockets.on('connection', function(socket){
 		
 		/*보낸 사람을 제외한 나머지 유저에게 메시지 전송*/
 		
-		socket.broadcast.emit('update', data);
+		socket.broadcast.emit('update', data)
 	})
 	
 	socket.on('desconnect', function(){
 		console.log(socket.name + '님이 나가셨습니다.')
 		
 		/*나가는 사람을 제외한 나머지 유저에게 메시지 전송*/
-		socket.broadcast.emit('update', {type:'disconnect', name:'SERVER', message:socket.name+'님이 나가셨습니다.'});
+		socket.broadcast.emit('update', {type:'disconnect', name:'SERVER', message:socket.name+'님이 나가셨습니다.'})
 	})
 })
 
 server.listen(8090, function(){
-	console.log('서버 실행 중 ...')
+	console.log('2서버 실행 중 ...')
 })
